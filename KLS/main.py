@@ -1,4 +1,5 @@
 import pandas as pd
+from datetime import datetime
 import json
 
 # Cargar datos desde el archivo JSON
@@ -11,3 +12,6 @@ filtrados = [e for e in respuesta if e("proyect") != "GRONK"]
 # modificar datos filtrados
 for empleado in filtrados:
     empleado["salary"] = f'{float(empleado["salary"].replace("$", "").replace(",", "")) * 1.1:.2f}€'
+
+df = pd.DataFrame(filtrados)
+mes_y_anio = datetime.now().strftime("%m-%Y")
