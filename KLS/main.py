@@ -7,7 +7,7 @@ with open('employees.json', 'r') as file:
     respuesta = json.load(file)
 
 # filtrar empleados menores de 30 años y que no pertenezcan al proyecto 'GRONK'
-filtrados = [e for e in respuesta if e["proyect"] != "GRONK"]
+filtrados = [emp for emp in respuesta if emp["proyect"] != "GRONK"]
 
 # modificar datos filtrados
 for empleado in filtrados:
