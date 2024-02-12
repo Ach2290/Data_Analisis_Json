@@ -15,3 +15,6 @@ for empleado in filtrados:
 
 df = pd.DataFrame(filtrados)
 mes_y_anio = datetime.now().strftime("%m-%Y")
+
+nombre_archivo = f"pagos-empleados-{mes_y_anio}.xlsx"
+df.to_excel(nombre_archivo, index=False)
