@@ -14,9 +14,9 @@ for empleado in filtrados:
     empleado["salary"] = f'{float(empleado["salary"].replace("$", "").replace(",", "")) * 1.1:.2f}€'
 
 df = pd.DataFrame(filtrados)
-mes_y_anio = datetime.now().strftime("%m-%Y")
+fecha = datetime.now().strftime("%m-%Y")
 
-nombre_archivo = f"pagos-empleados-{mes_y_anio}.xlsx"
+nombre_archivo = f"pagos-empleados-{fecha}.xlsx"
 df.index.name= 'ID'
 df.to_excel(nombre_archivo)
 
